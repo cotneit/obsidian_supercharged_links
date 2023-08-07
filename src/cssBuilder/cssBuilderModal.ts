@@ -23,7 +23,7 @@ export function displayText(link: CSSLink, settings: SuperchargedLinksSettings):
         if (!link.value){
             return "<b>Please choose an attribute value.</b>"
         }
-        return `<span class="data-link-icon data-link-text data-link-icon-after" data-link-${link.name}="${link.value}">Note</span> has attribute <b>${link.name}</b> ${matchPreview[link.match]} <b>${link.value}</b>.`;
+        return `<span class="data-link-icon data-link-text data-link-icon-after" data-link-attr-${link.name}="${link.value}">Note</span> has attribute <b>${link.name}</b> ${matchPreview[link.match]} <b>${link.value}</b>.`;
     }
     if (!link.value) {
         return "<b>Please choose a path.</b>"

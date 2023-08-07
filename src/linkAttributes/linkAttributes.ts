@@ -24,7 +24,7 @@ export function fetchTargetAttributesSync(app: App, settings: SuperchargedLinksS
                 if (attribute === 'tag' || attribute === 'tags') {
                     new_props['tags'] += frontmatter[attribute];
                 } else {
-                    new_props[attribute] = frontmatter[attribute]
+                    new_props['attr-' + attribute] = frontmatter[attribute]
                 }
             }
         })
@@ -46,7 +46,7 @@ export function fetchTargetAttributesSync(app: App, settings: SuperchargedLinksS
         }
         settings.targetAttributes.forEach((field: string) => {
             const value = page[field];
-            if (value) new_props[field] = value;
+            if (value) new_props['attr-' + field] = value;
         })
     };
 

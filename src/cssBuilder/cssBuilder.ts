@@ -93,7 +93,7 @@ export async function buildCSS(selectors: CSSLink[], plugin: SuperchargedLinks) 
     selectors.forEach(selector => {
         let cssSelector: string;
         if (selector.type === 'attribute') {
-            cssSelector = `[data-link-${selector.name}${matchSign[selector.match]}="${selector.value}" ${selector.matchCaseSensitive ?"" : " i"}]`;
+            cssSelector = `[data-link-attr-${selector.name}${matchSign[selector.match]}="${selector.value}" ${selector.matchCaseSensitive ?"" : " i"}]`;
         }
         else if (selector.type === 'tag') {
             cssSelector = `[data-link-tags*="${selector.value}" i]`;
